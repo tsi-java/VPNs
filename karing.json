@@ -1,0 +1,37 @@
+{
+  "log": {
+    "level": "info"
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "google",
+        "address": "8.8.8.8"
+      },
+      {
+        "tag": "local",
+        "address": "1.1.1.1",
+        "detour": "direct"
+      }
+    ]
+  },
+  "outbounds": [
+    {
+      "type": "mieru",
+      "tag": "mieru-out",
+      "server": "80.96.58.225",
+      "server_port": 2015,
+      "transport": "TCP",
+      "username": "myuser",
+      "password": "E05wA6+RahXOz4b6+1fCwUjXZSdGhB7j",
+      "multiplexing": "MULTIPLEXING_HIGH"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    }
+  ],
+  "route": {
+    "final": "mieru-out"
+  }
+}
